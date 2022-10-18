@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Bruno Coelho</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+        </ul>
+    </nav>
+    
+    <section class="destaque">
+    <img src="Images/fundo-low.jpg" alt="" id="fundo">
+    <h2 id="texto">Bruno Coelho <br> <span>Web Designer</span></h2>
+    <div class="scrolldown">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    </section>
+    <div class="descricao" id="sobre">
+        <h2>Quem sou eu?</h2>
+        <p>Olá meu nome é Bruno, tenho 22 anos e estou cursando Desenvolvimento de Sistemas na ETEC Professor Camargo Aranha, recentemente conclui o Curso Web Designer pelo Senac e fiz alguns outros cursos diversificados na área de tecnologia pela Alura. Tenho conhecimento na maioria dos softwares da Adobe como: Photoshop, Illustrator, Animate, Premiere etc... <br> <br>
+        Consigo fazer a maioria dos sites usando HTML e CSS e estou me aprofundando no JavaScript para aprimorar a parte dinâmica deles. 
+        </p>
+    </div>
+    
+    <h2 id="projetos">Projetos</h2>
+    <section class="projetos">
+        <ul class="lista-projetos">
+
+            <li data-text="Projeto Integrador do Senac(Curso de Web Designer), o cliente era um revendedor de Internet da vivo. Utilizei Html, CSS, JS" data-color="#690fdf">
+                <a href="projetos/Site vivo/index.html" class="vivo" target="_blank"><img src="Images/vivo.svg" alt=""></a>
+            </li>
+
+            <li data-text="Projeto para uma agência (StarSeg) que visa aumentar visibilidade de contas no instagram, Utilizei Html, CSS e JS " data-color="#df124f">
+                <a href="projetos/agencia-starseg/index.html" class="starseg" target="_blank"><img src="Images/starseg.svg" alt="">
+                </a>
+            </li>
+    
+            <li data-text='Projeto para criar um clone do Site Popular "Letreco", Utilizei Html, CSS e JS' data-color="#17d868">
+                <a href="projetos/letreco/index.html" class="letreco" target="_blank"><i class="fa fa-keyboard-o" aria-hidden="true"></i>
+                </a>
+            </li>
+
+        </ul>
+    </section>
+    <p class="info">* Passe o Mouse por cima do icone para mais informações</p>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <script src="script/vanilla-tilt.min.js"></script>
+    <script>
+
+        gsap.to("#fundo", {
+            scrollTrigger: {
+                scrub : 1
+            },
+            scale : 1.3
+        });
+
+        gsap.to("#texto", {
+            scrollTrigger: {
+                scrub : 1
+            },
+            y : 500,
+        });
+
+        
+        VanillaTilt.init(document.querySelectorAll(".lista-projetos li a"), {
+            max: 30,
+            speed: 400,
+            glare: true,
+            "max-glare": 1,
+
+        });
+
+        let list = document.querySelectorAll('.lista-projetos li');
+        let bg = document.querySelector('.projetos');
+        list.forEach(elements => {
+            elements.addEventListener('mouseenter', function(event){
+                let color = event.target.getAttribute('data-color');
+                bg.style.backgroundColor = color;
+            })
+            elements.addEventListener('mouseleave', function(event){
+                bg.style.backgroundColor = 'rgb(88, 94, 141)';
+            })
+        })
+    </script>
+
+</body>
+</html>

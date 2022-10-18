@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letreco Bruno</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="title-container">
+            <h1>
+                <span>L</span>
+                <span>E</span>
+                <span class="letter-yellow">T</span>
+                <span>R</span>
+                <span class="letter-red">E</span>
+                <span>C</span>
+                <span class="letter-green">O</span>
+            </h1>
+        </div>
+        <div class="tile-container"></div>
+        <div class="keyboard-container">
+            <div class="keyboard-row-container notAlphabetic" id="backspaceAndEnterRow">
+                <button id="apagar"><ion-icon name="trash-outline"></ion-icon></button>
+                <button id="enter"><ion-icon name="checkmark-circle"></ion-icon></ion-icon></button>
+            </div>
+            <div class="keyboard-row-container" id="keyboardFirstRow"></div>
+            <div class="keyboard-row-container" id="keyboardSecondRow"></div>
+            <div class="keyboard-row-container" id="keyboardThirdRow"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

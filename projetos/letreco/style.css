@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Lato&display=swap');
+
+body {
+    font-family: 'Comfortaa';
+}
+
+.title-container {
+    text-align: center;
+    width: 510px;
+    margin: 1rem 0;
+}
+
+.letter-yellow {
+    color: #c79c2e;
+}
+
+.letter-green {
+    color: #51b36e;
+}
+
+.letter-red {
+    color: #943e3c;
+}
+
+.app-container {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tile-row {
+    margin-bottom: 1rem;
+    justify-content: center;
+    display: flex;
+    box-sizing: border-box;
+}
+
+
+.tile-column {
+    background-color: #f4f3f1;
+    color: #252525;
+    height: 40px;
+    width: 40px;
+    border-radius: 0.25rem;
+    margin-right: 0.5rem;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.typing {
+    border: 3px solid #252525;
+    font-weight: bold;
+}
+
+.disabled {
+    border: 1px solid #252525;
+}
+
+.right {
+    background-color: #51b36e;
+    color: #f4f3f1;
+}
+
+.wrong {
+    background-color: #943e3c;
+    color: #f4f3f1;
+}
+
+.displaced {
+    background-color: #c79c2e;
+    color: #f4f3f1;
+}
+
+.keyboard-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.keyboard-row-container {
+    align-items: center;
+    margin-bottom: 0.5rem;
+    justify-content: center;
+    display: flex;
+}
+
+.keyboard-row-container.notAlphabetic {
+    width: 200%;
+}
+
+.keyboard-row-container.notAlphabetic button {
+    padding: .4rem 2.4rem;
+    background-color: #ffffff;
+    margin: 1rem .8rem;
+    border: 1px solid black;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    transition: .5s;
+}
+
+#apagar:hover, #apagar:active, #apagar:focus {
+    background-color: #943e3c;
+    color: #ffffff;
+}
+
+#enter:hover, #enter:active, #enter:focus {
+    background-color: #51b36e;
+    color: #ffffff;
+}
+
+.keyboard-row-container:not(.notAlphabetic) button {
+    width: 12%;
+    height: 35px;
+    border-radius: 0.25rem;
+    margin-right: 0.6rem;
+    border: 1px solid black;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-family: 'Lato';
+    background-color: #ffffff;
+    padding: .4rem .7rem;
+}
