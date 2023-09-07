@@ -1,41 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Bruno Coelho</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="menu.css" />
+  </head>
+  <body>
     <nav class="menu">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#projetos">Projetos</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-        </ul>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+      </ul>
     </nav>
-    
+
     <section class="destaque">
-    <img src="Images/fundo-low.jpg" alt="" id="fundo">
-    <h2 id="texto">Bruno Coelho <br> <span>Web Designer</span></h2>
-    <div class="scrolldown">
+      <img src="Images/fundo-low.jpg" alt="" id="fundo" />
+      <h2 id="texto">
+        Bruno Coelho <br />
+        <span>Web Designer</span>
+      </h2>
+      <div class="scrolldown">
         <span></span>
         <span></span>
         <span></span>
-    </div>
+      </div>
     </section>
     <div class="descricao" id="sobre">
-        <h2>Quem sou eu?</h2>
-        <p>Olá meu nome é Bruno, tenho 22 anos e estou cursando Desenvolvimento de Sistemas na ETEC Professor Camargo Aranha, recentemente conclui o Curso Web Designer pelo Senac e fiz alguns outros cursos diversificados na área de tecnologia pela Alura. Tenho conhecimento na maioria dos softwares da Adobe como: Photoshop, Illustrator, Animate, Premiere etc... <br> <br>
-        Consigo fazer a maioria dos sites usando HTML e CSS e estou me aprofundando no JavaScript para aprimorar a parte dinâmica deles. 
-        </p>
+      <h2>Quem sou eu?</h2>
+      <p>
+        Olá, meu nome é Bruno, tenho 23 anos e estou no processo de concluir o
+        curso de Desenvolvimento de Sistemas na ETEC Professor Camargo Aranha.
+        Atualmente, estou empregado como estagiário de suporte na <strong>Saurus
+        Software </strong>, onde estou ganhando experiência prática em tecnologia.
+        <br />
+        Sou certificado no Curso de Web Designer pelo Senac e também concluí
+        diversos cursos variados na área de tecnologia pela Alura. Minhas
+        habilidades técnicas incluem:
+      </p>
+      <ul>
+        <li>PHP</li>
+        <li>MySQL</li>
+        <li>Java</li>
+        <li>Laravel</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Bootstrap</li>
+        <li>Photoshop</li>
+        <li>Illustrator</li>
+      </ul>
+      <p>
+        Estou sempre em busca de oportunidades para expandir meu conhecimento e
+        aprimorar minhas habilidades na área de desenvolvimento de sistemas. Se
+        você está procurando um profissional dedicado e empenhado em melhorar
+        constantemente, estou à disposição para colaborar em projetos
+        desafiadores.
+      </p>
     </div>
-    
+
     <h2 id="projetos">Projetos</h2>
-    <section class="projetos">
+    <!-- <section class="projetos">
         <ul class="lista-projetos">
 
             <li data-text="Projeto Integrador do Senac(Curso de Web Designer), o cliente era um revendedor de Internet da vivo. Utilizei Html, CSS, JS" data-color="#690fdf">
@@ -54,49 +89,142 @@
 
         </ul>
     </section>
-    <p class="info">* Passe o Mouse por cima do icone para mais informações</p>
+    <p class="info">* Passe o Mouse por cima do icone para mais informações</p> -->
 
+    <section class="portfolio">
+      <ul>
+        <li>
+          <a href="projetos/Site vivo/index.html" target="_blank"
+            >Vendedor da vivo</a
+          >
+          <p>
+            Site construido para um cliente revendedor da vivo, projeto
+            integrador do curso de <strong>WebDesigner</strong> do Senac<br />Tecnologias
+            usadas: <strong>JavaScript, HTML, CSS</strong> e Photoshop
+          </p>
+        </li>
+        <li>
+          <a href="projetos/agencia-starseg/index.html" target="_blank"
+            >StarSeg</a
+          >
+          <p>
+            Projeto para a agência <strong>StarSeg</strong> que visa aumentar
+            visibilidade de contas no instagram <br />
+            Tecnologias usadas: <strong>JavaScript, HTML, CSS </strong> e
+            Photoshop
+          </p>
+        </li>
+        <li>
+          <a href="projetos/letreco/index.html" target="_blank">Letreco</a>
+          <p>
+            Projeto para criar um clone do site popular
+            <strong>"Letreco"</strong> <br />
+            Tecnologias usadas: <strong>JavaScript</strong>, HTML e CSS
+          </p>
+        </li>
+        <li>
+          <a href="http://soccerbot.epizy.com/" target="_blank">SoccerBot</a>
+          <p>
+            Site feito para um cliente que vende bot de apostas no telegram
+            <br />
+            Tecnologias usadas:
+            <strong>JavaScript, HTML, CSS e Bootstrap</strong>
+          </p>
+        </li>
+        <li>
+          <a href="http://lixoeletronico.epizy.com/" target="_blank"
+            >Lixo eletrônico</a
+          >
+          <p>
+            <strong>Site institucional</strong> para conscientizar sobre o lixo
+            eletrônico e como descartar ele, feito no 1º semestre do curso de
+            Desenvolvimento de sistemas<br />Tecnologias usadas:
+            <strong>JavaScript, HTML, CSS e Bootstrap</strong>
+          </p>
+        </li>
+        <li>
+          <a href="http://audote.epizy.com/" target="_blank">Audote</a>
+          <p>
+            <strong>TCC</strong> do curso de desenvolvimento de sistemas da Etec
+            Camargo Aranha, feito em parceria com a
+            <strong>ONG (Auqmia)</strong> que resgata animais abandonados, é um
+            site de adoção de animais<br />
+            Tecnologias usadas: <strong>PHP, MySQL</strong>, JavaScript, HTML,
+            CSS e Bootstrap
+          </p>
+        </li>
+        <li>
+          <a href="http://saurusfaq.great-site.net/" target="_blank"
+            >SaurusFAQ</a
+          >
+          <p>
+            Site feito para me ajudar a aprender sobre as aplicações da Saurus e
+            consultar quando tiver alguma dúvida<br />
+            Tecnologias usadas: <strong>PHP, MySQL</strong>, JavaScript, HTML,
+            CSS e Bootstrap
+          </p>
+        </li>
+        <li>
+          <a href="https://tefs.great-site.net/" target="_blank">Tefs</a>
+          <p>
+            Projeto feito para gerenciar Tokens de Tefs para a
+            Saurus/Safrapay<br />
+            Tecnologias usadas: <strong>PHP, MySQL, JavaScript</strong>, HTML,
+            CSS e Bootstrap
+          </p>
+        </li>
+      </ul>
+    </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
     <script src="script/vanilla-tilt.min.js"></script>
     <script>
+      gsap.to("#fundo", {
+        scrollTrigger: {
+          scrub: 1,
+        },
+        scale: 1.3,
+      });
 
-        gsap.to("#fundo", {
-            scrollTrigger: {
-                scrub : 1
-            },
-            scale : 1.3
+      gsap.to("#texto", {
+        scrollTrigger: {
+          scrub: 1,
+        },
+        y: 500,
+      });
+
+      // VanillaTilt.init(document.querySelectorAll(".lista-projetos li a"), {
+      //     max: 30,
+      //     speed: 400,
+      //     glare: true,
+      //     "max-glare": 1,
+
+      // });
+
+      // let list = document.querySelectorAll('.lista-projetos li');
+      // let bg = document.querySelector('.projetos');
+      // list.forEach(elements => {
+      //     elements.addEventListener('mouseenter', function(event){
+      //         let color = event.target.getAttribute('data-color');
+      //         bg.style.backgroundColor = color;
+      //     })
+      //     elements.addEventListener('mouseleave', function(event){
+      //         bg.style.backgroundColor = 'rgb(88, 94, 141)';
+      //     })
+      // })
+
+      let text = document
+        .querySelectorAll(".portfolio ul li a")
+        .forEach((text) => {
+          text.innerHTML = text.innerText
+            .split("")
+            .map(
+              (letters, i) =>
+                `<span style="transition-delay:${i * 40}ms">${letters}</span>`
+            )
+            .join("");
         });
-
-        gsap.to("#texto", {
-            scrollTrigger: {
-                scrub : 1
-            },
-            y : 500,
-        });
-
-        
-        VanillaTilt.init(document.querySelectorAll(".lista-projetos li a"), {
-            max: 30,
-            speed: 400,
-            glare: true,
-            "max-glare": 1,
-
-        });
-
-        let list = document.querySelectorAll('.lista-projetos li');
-        let bg = document.querySelector('.projetos');
-        list.forEach(elements => {
-            elements.addEventListener('mouseenter', function(event){
-                let color = event.target.getAttribute('data-color');
-                bg.style.backgroundColor = color;
-            })
-            elements.addEventListener('mouseleave', function(event){
-                bg.style.backgroundColor = 'rgb(88, 94, 141)';
-            })
-        })
     </script>
-
-</body>
+  </body>
 </html>

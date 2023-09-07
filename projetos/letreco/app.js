@@ -1,5 +1,3 @@
-// Declaração de variaveis
-
 const tiles = document.querySelector(".tile-container");
 const backspaceAndEnterRow = document.querySelector("#backspaceAndEnterRow");
 const keyboardFirstRow = document.querySelector("#keyboardFirstRow");
@@ -21,10 +19,6 @@ for (let index = 0; index < letreco.length; index++) {
 }
 const guesses = [];
 
-// Fim da declaração de variaveis
-
-// Criação das linhas e colunas
-
 for (let rowIndex = 0; rowIndex < rows; rowIndex++) {
   guesses[rowIndex] = new Array(columns);
   const tileRow = document.createElement("div");
@@ -42,10 +36,6 @@ for (let rowIndex = 0; rowIndex < rows; rowIndex++) {
   }
   tiles.append(tileRow);
 }
-
-// Fim da criação
-
-// Verificação de palpite
 
 const checkGuess = () => {
   const guess = guesses[currentRow].join("");
@@ -67,10 +57,6 @@ const checkGuess = () => {
     }
   }
 
-  // Fim da verificação
-
-  // Verifica resposta certa ou errada
-
   if(guess === letreco) {
     window.alert("tu é demais")
     return
@@ -82,10 +68,6 @@ const checkGuess = () => {
     }
   }
 };
-
-// Fim da verificação
-
-// Pula para a proxima linha
 
 const moveToNextRow = () => {
     var typingColumns = document.querySelectorAll(".typing")
@@ -104,10 +86,6 @@ const moveToNextRow = () => {
     }
 }
 
-// Fim da função
-
-// Função para conseguir digitar com o teclado
-
 const handleKeyboardOnClick = (key) => {
   if (currentColumn === columns) {
     return;
@@ -119,10 +97,6 @@ const handleKeyboardOnClick = (key) => {
   guesses[currentRow][currentColumn] = key;
   currentColumn++;
 };
-
-// Fim da função
-
-// Criação das teclas
 
 const createKeyboardRow = (keys, keyboardRow) => {
   keys.forEach((key) => {
@@ -138,19 +112,15 @@ createKeyboardRow(keysFirstRow, keyboardFirstRow);
 createKeyboardRow(keysSecondRow, keyboardSecondRow);
 createKeyboardRow(keysThirdRow, keyboardThirdRow);
 
-// Fim da criação das teclas
-
-// Função apagar e confirmar
-
 const handleBackspace = () => {
-  if(currentColumn === 0){
-    return
-  }
-  
-  currentColumn--
-  guesses[currentRow][currentColumn] = ""
-  const tile = document.querySelector("#row"+currentRow+"column"+currentColumn)
-  tile.textContent = ""
+    if(currentColumn === 0){
+        return
+    }
+
+    currentColumn--
+    guesses[currentRow][currentColumn] = ""
+    const tile = document.querySelector("#row"+currentRow+"column"+currentColumn)
+    tile.textContent = ""
 }
 
 
@@ -163,14 +133,12 @@ enterButton.addEventListener("click", checkGuess);
 backspaceAndEnterRow.append(enterButton);
 
 document.onkeydown = function (evt) {
-  evt = evt || window.evt
-  if(evt.key === "Enter"){
-    checkGuess();
-  } else if (evt.key === "Backspace") {
-    handleBackspace();
-  }else {
-    handleKeyboardOnClick(evt.key.toUpperCase())
+    evt = evt || window.evt
+    if(evt.key === "Enter"){
+        checkGuess();
+    } else if (evt.key === "Backspace") {
+        handleBackspace();
+    }else {
+        handleKeyboardOnClick(evt.key.toUpperCase())
     }
 }
-
-  // Fim da função apagar e confirmar
