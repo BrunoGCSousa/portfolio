@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ModaBR - Loja de Roupas</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="logo">Moda<span>BR</span></a>
+      <nav class="nav">
+        <a href="#" class="nav-link active" data-category="todos">Todos</a>
+        <a href="#" class="nav-link" data-category="camisetas">Camisetas</a>
+        <a href="#" class="nav-link" data-category="calcas">Calças</a>
+        <a href="#" class="nav-link" data-category="vestidos">Vestidos</a>
+        <a href="#" class="nav-link" data-category="jaquetas">Jaquetas</a>
+        <a href="#" class="nav-link" data-category="acessorios">Acessórios</a>
+      </nav>
+      <div class="header-actions">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Buscar produtos...">
+          <button class="search-btn" aria-label="Buscar"><i class="fas fa-search"></i></button>
+        </div>
+        <button class="cart-toggle" id="cartToggle" aria-label="Abrir carrinho">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <span class="logo">Moda<span>BR</span></span>
+      <button class="close-menu" id="closeMenu" aria-label="Fechar menu"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="mobile-search">
+      <input type="text" id="mobileSearchInput" placeholder="Buscar produtos...">
+    </div>
+    <a href="#" class="mobile-nav-link active" data-category="todos">Todos</a>
+    <a href="#" class="mobile-nav-link" data-category="camisetas">Camisetas</a>
+    <a href="#" class="mobile-nav-link" data-category="calcas">Calças</a>
+    <a href="#" class="mobile-nav-link" data-category="vestidos">Vestidos</a>
+    <a href="#" class="mobile-nav-link" data-category="jaquetas">Jaquetas</a>
+    <a href="#" class="mobile-nav-link" data-category="acessorios">Acessórios</a>
+  </div>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-subtitle">Nova Coleção 2026</p>
+      <h1 class="hero-title">Estilo que<br>define você</h1>
+      <p class="hero-text">Descubra as últimas tendências em moda com até 40% de desconto.</p>
+      <a href="#produtos" class="hero-btn">Ver Coleção</a>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories">
+    <div class="container">
+      <h2 class="section-title">Categorias</h2>
+      <div class="categories-grid">
+        <button class="category-card" data-category="camisetas">
+          <div class="category-icon"><i class="fas fa-tshirt"></i></div>
+          <h3>Camisetas</h3>
+        </button>
+        <button class="category-card" data-category="calcas">
+          <div class="category-icon"><i class="fas fa-person"></i></div>
+          <h3>Calças</h3>
+        </button>
+        <button class="category-card" data-category="vestidos">
+          <div class="category-icon"><i class="fas fa-person-dress"></i></div>
+          <h3>Vestidos</h3>
+        </button>
+        <button class="category-card" data-category="jaquetas">
+          <div class="category-icon"><i class="fas fa-vest"></i></div>
+          <h3>Jaquetas</h3>
+        </button>
+        <button class="category-card" data-category="acessorios">
+          <div class="category-icon"><i class="fas fa-gem"></i></div>
+          <h3>Acessórios</h3>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="products" id="produtos">
+    <div class="container">
+      <div class="products-header">
+        <h2 class="section-title">Nossos Produtos</h2>
+        <div class="sort-box">
+          <label for="sortSelect">Ordenar:</label>
+          <select id="sortSelect">
+            <option value="default">Relevância</option>
+            <option value="price-asc">Menor Preço</option>
+            <option value="price-desc">Maior Preço</option>
+            <option value="name-asc">A - Z</option>
+          </select>
+        </div>
+      </div>
+      <div class="products-grid" id="productsGrid">
+        <!-- Products will be rendered by JavaScript -->
+      </div>
+      <p class="no-results" id="noResults" style="display:none;">Nenhum produto encontrado.</p>
+    </div>
+  </section>
+
+  <!-- Product Detail Modal -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="Fechar">&times;</button>
+      <div class="modal-body">
+        <div class="modal-image" id="modalImage"></div>
+        <div class="modal-info">
+          <span class="modal-category" id="modalCategory"></span>
+          <h2 class="modal-title" id="modalTitle"></h2>
+          <div class="modal-price" id="modalPrice"></div>
+          <p class="modal-description" id="modalDescription"></p>
+          <div class="modal-sizes">
+            <p class="size-label">Tamanho:</p>
+            <div class="size-options" id="sizeOptions"></div>
+          </div>
+          <div class="modal-colors">
+            <p class="color-label">Cor:</p>
+            <div class="color-options" id="colorOptions"></div>
+          </div>
+          <div class="modal-quantity">
+            <p class="qty-label">Quantidade:</p>
+            <div class="qty-controls">
+              <button class="qty-btn" id="qtyMinus" aria-label="Diminuir quantidade">-</button>
+              <span class="qty-value" id="qtyValue">1</span>
+              <button class="qty-btn" id="qtyPlus" aria-label="Aumentar quantidade">+</button>
+            </div>
+          </div>
+          <button class="add-to-cart-btn" id="addToCartBtn">
+            <i class="fas fa-shopping-bag"></i> Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h2><i class="fas fa-shopping-bag"></i> Carrinho</h2>
+      <button class="close-cart" id="closeCart" aria-label="Fechar carrinho"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <i class="fas fa-shopping-bag"></i>
+        <p>Seu carrinho está vazio</p>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cartTotal">R$ 0,00</span>
+      </div>
+      <button class="checkout-btn" id="checkoutBtn">Finalizar Compra</button>
+      <button class="clear-cart-btn" id="clearCartBtn">Limpar Carrinho</button>
+    </div>
+  </div>
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <!-- Checkout Success Modal -->
+  <div class="modal" id="checkoutModal">
+    <div class="modal-content checkout-success">
+      <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+      <h2>Compra Realizada!</h2>
+      <p>Obrigado pela sua compra. Você receberá um e-mail com os detalhes do pedido.</p>
+      <button class="hero-btn" id="checkoutClose">Continuar Comprando</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3 class="logo">Moda<span>BR</span></h3>
+          <p>Sua loja de roupas online com as melhores tendências da moda brasileira.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Links Rápidos</h4>
+          <a href="#">Sobre Nós</a>
+          <a href="#">Política de Troca</a>
+          <a href="#">Envio e Entrega</a>
+          <a href="#">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <p><i class="fas fa-envelope"></i> contato@modabr.com</p>
+          <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+          <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 ModaBR. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
